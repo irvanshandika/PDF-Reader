@@ -1,0 +1,194 @@
+/* Modern Minimalist Styles */
+:root {
+  --primary: #3a86ff;
+  --primary-hover: #2667cc;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --text: #212529;
+  --text-secondary: #6c757d;
+  --border: #e9ecef;
+  --error: #ff4d4f;
+  --success: #52c41a;
+  --radius: 8px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --transition: all 0.2s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Controls Container */
+.controls-container {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.controls-container:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.control-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: var(--transition);
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(58, 134, 255, 0.2);
+}
+
+button {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background-color: var(--border);
+  color: var(--text-secondary);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* PDF Viewer */
+.pdf-viewer-container {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.controls {
+  padding: 1rem;
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.controls button {
+  min-width: 100px;
+}
+
+.controls span {
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.react-pdf__Document {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-pdf__Page {
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow-md);
+}
+
+/* Messages */
+.error-message,
+.loading-message,
+.no-pdf-message {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: var(--error);
+  background-color: rgba(255, 77, 79, 0.08);
+}
+
+.loading-message {
+  color: var(--text-secondary);
+}
+
+.no-pdf-message {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+  
+  .controls-container {
+    padding: 1rem;
+  }
+  
+  .control-group {
+    flex-direction: column;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+  }
+}
